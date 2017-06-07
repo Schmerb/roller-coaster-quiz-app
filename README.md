@@ -50,5 +50,5 @@ ___
 * Fisher-Yates (aka Knuth) Shuffle algorithm implementation
   * Used to shuffle the order of appearence of the four multiple choice answers for each question.
   * O(n) time complexity. 
-* Mobile first design implementation 
+* Mobile first design strategy 
 * Utilized browser's built-in localstorage object to store and retain data across power cycles in order to keep track of user scores and update a high-score 'leaderboard'.
