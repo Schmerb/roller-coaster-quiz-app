@@ -37,3 +37,17 @@ Your quiz app must:
 * be responsive
 * follow basic accessibility best practices
 * work (this may go without saying, but...)
+
+___
+
+## Built With
+* HTML 
+* CSS
+* JavaScript
+* jQuery
+
+## Acknowledgments
+* Fisher-Yates (aka Knuth) Shuffle algorithm 
+  * Used to shuffle the order of appearence of the four multiple choice answers for each question.
+  * O(n) time complexity. 
+
