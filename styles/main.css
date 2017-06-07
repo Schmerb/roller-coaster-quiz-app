@@ -9,7 +9,6 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-
 #landing {
 	text-align: center;
 }
@@ -383,6 +382,8 @@ label {
 
 	.pov-retake-btn {
 		color: white;
+		background: none;
+		border: none;
 		font-size: 24px;
 	}
 
