@@ -2,7 +2,7 @@
 A project from [Thinkful's](https://www.thinkful.com/) fullstack web development program based on roller coaster and theme park facts.
 
 Here is the original prompt for the assignment:
-
+___
 # Project Requirements
 
 ## User experience requirements
