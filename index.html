@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Roller Coaster Quiz</title>
+	<meta charset="utf-8">
+	<meta name="description" content="A multiple choice quiz based on roller coaster facts.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://fonts.googleapis.com/css?family=Audiowide|Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./styles/main.css">
+</head>
+<body>
+	<header id="landing" class="js-start ">
+		<button id="start-btn" class="js-start-btn bubble">
+			<h1 id="start-btn-text">Take Coaster Quiz</h1>
+		</button>
+	</header>
+
+		<!-- <br><br><hr><br> -->
+
+	
+
+	<main>
+		<section class="quiz-container js-quiz hidden">
+			<form id="quiz-form" class="js-quiz-form" method="post" action="#">
+				<fieldset>
+					<legend id="quiz-legend">Question <span id="question-number">1</span> of 10</legend>
+
+					<header id="question">
+						<h3>What roller coaster is known to have had some of the longest queue wait times in the history of amusement park rides?</h3>
+					</header>
+
+					<label for="answer-1">
+						<input type="radio" name="answer" id="answer-1" required>
+						<span>The Hulk, Islands of Adventure</span>
+					</label>
+
+					<label for="answer-2">
+						<input type="radio" name="answer" id="answer-2" required>
+						<span>Batman the Ride, Six Flags Magic Mountain</span>
+					</label>
+
+					<label for="answer-3">
+						<input type="radio" name="answer" id="answer-3" required>
+						<span>Millennium Force, Cedar Point</span>
+					</label>
+
+					<label for="answer-4">
+						<input type="radio" name="answer" id="answer-4" required>
+						<span>Kingda Ka, Six Flags Great Adventure</span>
+					</label>
+				</fieldset>
+
+				<footer>
+					<button id="submit-btn">Submit</button>
+					<div id="score"><h4>Score: <span id="js-current-score">0</span> / 10</h4></div>
+				</footer>
+							
+			</form>
+		</section>
+
+
+			<!-- <br><br><hr><br> -->
+
+
+		<section id="modal-container" class="js-modal hidden">
+		
+			<div id="success-fail-modal">
+				<img id="js-gif" src="https://media.giphy.com/media/4SU2Cf0g3zPDG/giphy.gif">
+				
+				<br>
+				
+				<button id="next-btn" class="js-next-btn"><h3>Next</h3></button>
+			</div>
+			
+		</section>
+
+
+			<!-- <br><br><hr><br> -->
+
+
+		<section id="result-container" class="js-results-container hidden">
+
+			<header id="finished-bubble" class="bubble">
+				<h1>Finished</h1>
+			</header>
+
+			<div id="score-bubble" class="bubble">
+				<h2>Score: <span id="js-final-score"></span> / 10</h2>
+				<dl class="high-scores">
+					<dt>High Scores</dt>
+					<dd>9 / 10</dd>
+					
+				</dl>
+			</div>
+
+			<button id="pov-btn" class="js-pov-btn bubble">Ride Millennium Force</button>
+			<button class="js-retake-btn retake-btn bubble">Retake Quiz</button>
+
+			<div class="results">
+				<header>
+					<h1>Results</h1>
+				</header>
+			</div>
+		</section>
+
+
+
+		<section id="pov-video-container" class="hidden">
+			<div id="modal-filter"></div>
+			<video id="pov-video" src="assets/video/Millennium-Force-Official-POV.mp4" controls allowfullscreen></video>
+			<label for="pov-video">Millennium Force,<br> Cedar Point<br> Sandusky, Ohio</label>
+			<button class="js-retake-btn pov-retake-btn">Retake Quiz</button>
+		</section>
+	</main>
+
+	<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="assets.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
+
