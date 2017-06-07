@@ -23,13 +23,13 @@ body {
 	width: 200px;
 	height: 100px;
 	text-align: center;
-	margin: 35px auto 0;
+	margin: 3px auto;
 	border: none;
 	box-shadow: 0 3px 15px rgba(0,0,0,0.8);
 }
 
 #start-btn-text {
-	font-size: 28px;
+	font-size: 20px;
 }
 
 #pov-btn,
@@ -39,6 +39,13 @@ body {
 
 #quiz-form  {
 	color: #f8f085;
+	max-width: 640px;
+}
+
+#question, 
+#quiz-form label,
+legend {
+	text-shadow: 0 0 15px rgba(0,0,0,1);
 }
 
 label {
@@ -67,12 +74,54 @@ label {
 	box-shadow: 0 0 10px 1px rgba(0,0,0,0.8);
 }
 
+#submit-btn:active {
+	background: #5b8c40;
+}
+
 #quiz-form fieldset {
 	background: -webkit-linear-gradient(-80deg, rgba(89,111,158,0.8), rgba(55,69,98,.9)) repeat scroll 0 0 transparent; /*rgba(89,111,158,0.8);*/
 	border-radius: 5px;
     border-color: rgba(89,111,158,0.7);
     border: none;
     box-shadow: inset 0px 0px 20px rgba(0,0,0,0.8);
+}
+
+#modal-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	background: rgba(9,12,16,0.85);
+}
+
+#success-fail-modal {
+	display: block;
+	text-align: center;
+}
+
+#success-fail-modal img {
+	display: inline-block;
+	width: 95%;
+	height: auto;
+	margin-top: 5px;
+	border-radius: 3px;
+	box-shadow: 0 0 25px 5px rgba(255,255,255,0.3);
+}
+
+
+#next-btn {
+	display: block;
+	color: white;
+	font-size: 24px;
+	background: none;
+	border: none;
+	margin: 100px auto;
+}
+
+#next-btn h3 {
+	margin: 0;
 }
 
 #score {
@@ -96,10 +145,41 @@ label {
 }
 
  /* * * * * * * * * * * * * * * Results page mobile * * * * * * * * * * * * * * */
+
+#finished-bubble {
+	height: auto;
+	/*line-height: 100px;*/
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+
+#finished-bubble h1 {
+	margin: 0;
+	font-size: 36px;
+}
+
+#score-bubble {
+	width: 350px;
+	height: 200px;
+	border-radius: 210px / 110px;
+}
+
+#score-bubble h2 {
+	position: relative;
+	top: 10px;
+}
+
+#pov-btn{
+	margin: 30px auto;
+}
+
+
 .results {
 	background: -webkit-linear-gradient(50deg, rgba(89,111,158,0.8), rgba(200,210,180,.8));
 	margin: 50px auto;
 	width: 95%;
+	max-width: 600px;
 }
 
 .results header {
@@ -144,11 +224,107 @@ label {
 	display: none;
 }
 
+#modal-filter {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	z-index: -5;
+}
+
+#pov-video-container {
+	margin-top: 40%;
+}
+
+#pov-video {
+	width: 100%;
+}
+
+label[for=pov-video] {
+	text-align: left;
+	color: white;
+}
+
+.pov-retake-btn {
+	display: block;
+	color: white;
+	background: none;
+	border: none;
+	margin: 0 auto;
+	font-size: 24px;
+}
+
+@media only screen and (max-width: 365px) {
+	#score-bubble {
+		width: 100%;
+	}
+}
+
+
+@media only screen and (min-width: 568px) {
+	#question {
+		padding: 0 40px;
+	}
+	
+	#quiz-form label {
+		padding-left: 100px;
+	}
+
+	#result-container {
+		position: relative;
+	}
+
+	.results {
+		margin-top: 115px;
+	}
+	
+	#score-bubble {
+		width: 350px;
+	}
+
+	#pov-btn {
+		position: absolute;
+		display: inline-block;
+		left: 0;
+		margin: 0;
+	}
+
+	.retake-btn {
+		position: absolute;
+		display: inline-block;
+		right: 0;
+	}
+
+	/*#pov-btn {
+
+	}*/
+}
+
+@media only screen and (min-width: 650px) {
+	.quiz-container {
+		max-width: 800px;
+		margin: 100px auto;
+	}
+	
+	#quiz-form {
+		margin: 0 auto;
+	}
+	
+}
+
+@media only screen and (min-width: 768px) {
+	
+	#score-bubble {
+		width: 400px;
+	}
+}
 
 
  /* * * * * * * * * * * * * Desktop view * * * * * * * * * * * * */
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1000px) {
 	.bubble {
 		/* Create generic oval container for desktop view*/
 		border-radius: 190px / 95px;
@@ -167,8 +343,13 @@ label {
 		height: 190px;	
 	}
 
+
 	#start-btn:active {
 		background: #8e9dbe;
+	}
+
+	#start-btn-text {
+		font-size: 28px;
 	}
 
 	#start-btn:hover,
@@ -185,50 +366,13 @@ label {
 		transition-duration: 0.2s;
 	}
 
-	#submit-btn:active {
-		background: #5b8c40;
-		transition-duration: 0.2s;
-	}
-
-	.quiz-container {
-		max-width: 800px;
-		margin: 100px auto;
-	}
-
-	#quiz-form {
-		width: 80%;
-		margin: 0 auto;
-	}
-
-	#quiz-form label {
-		padding-left: 100px;
-	}
-
 	#quiz-form label:hover {
 		font-size: 16.3px;
 		text-shadow: 0 0 40px rgba(255,255,255,0.7);
 		transition-duration: 0.3s;
 	}
 
-	#question {
-		padding: 0 40px;
-	}
-	
-	#question, 
-	#quiz-form label,
-	legend {
-		text-shadow: 0 0 15px rgba(0,0,0,1);
-	}
-	
-
 	#modal-container {
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 2;
-		width: 100%;
-		height: 100%;
-		background: rgba(9,12,16,0.85);
 		padding: 200px;
 	}
 
@@ -239,25 +383,16 @@ label {
 	}
 
 	#success-fail-modal img {
-		border-radius: 3px;
-		box-shadow: 0 0 25px rgba(255,255,255,0.3);
+		width: auto;
 	}
-	
 
 	#next-btn {
-		color: white;
-		font-size: 24px;
-		background: none;
-		border: none;
+		left: 50%;
 	}
-
-	#next-btn h3 {
-		 margin: 20px;
-	}
-
+	
 	#next-btn h3:hover {
 		cursor: pointer;
-		text-shadow: 0 0 40px rgba(255,255,255,0.7);
+		text-shadow: 0 0 40px rgba(255,255,255,0.7), 0 0 40px rgba(255,255,255,0.7);
 	}
 
  /* * * * * * * * * * * Results page * * * * * * * * * * */
@@ -267,8 +402,7 @@ label {
 		margin: 0 auto;
 	}
 
-	#start-btn,
-	#finished-bubble {
+	#start-btn{
 		width: 300px;
 		height: 150px;
 	}
@@ -283,15 +417,18 @@ label {
 
 	#finished-bubble h1
 	{
-		line-height: 150px;
+		line-height: 100px;
 		font-size: 32px;
-		vertical-align: middle;
-		margin: 0;
 	}
 
 	#finished-bubble {
-		top: 0;
 		left: 200px;
+		top: 20px;
+		display: block;
+		background: #52658f;
+		width: 200px;
+		height: 100px;
+		box-shadow: 0 3px 15px rgba(0,0,0,0.8);
 	}
 
 	#score-bubble  {
@@ -320,12 +457,13 @@ label {
 	}
 	
 	.retake-btn {
-		
 		position: absolute;
 		font-size: 24px;
 		width: 230px;
 		height: 115px;
-		top: 500px;
+		top: 540px;
+		left: 0;
+		margin: 0;
 	}
 
 	/*  results styling  */
@@ -365,27 +503,6 @@ label {
 		height: auto;
 	}
 
-	label[for=pov-video] {
-		text-align: left;
-		color: white;
-	}
-
-	#modal-filter {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0,0,0,0.8);
-		z-index: -5;
-	}
-
-	.pov-retake-btn {
-		color: white;
-		background: none;
-		border: none;
-		font-size: 24px;
-	}
 
 	.pov-retake-btn:hover {
 		text-shadow: 0 0 30px rgba(248, 240, 133, 1);
