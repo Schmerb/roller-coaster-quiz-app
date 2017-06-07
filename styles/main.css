@@ -103,7 +103,6 @@ label {
 
 #success-fail-modal img {
 	display: inline-block;
-	width: 95%;
 	height: auto;
 	margin-top: 5px;
 	border-radius: 3px;
@@ -262,6 +261,12 @@ label[for=pov-video] {
 	}
 }
 
+@media only screen and (max-width: 380px) {
+	#success-fail-modal img {
+		width: 95%;
+	}
+}
+
 
 @media only screen and (min-width: 568px) {
 	#question {
@@ -270,6 +275,10 @@ label[for=pov-video] {
 	
 	#quiz-form label {
 		padding-left: 100px;
+	}
+
+	#modal-container {
+		padding-top: 200px;
 	}
 
 	#result-container {
@@ -315,9 +324,14 @@ label[for=pov-video] {
 }
 
 @media only screen and (min-width: 768px) {
-	
 	#score-bubble {
 		width: 400px;
+	}
+}
+
+@media only screen and (min-width: 880px) {
+	#modal-container {
+		padding: 200px;
 	}
 }
 
@@ -372,9 +386,9 @@ label[for=pov-video] {
 		transition-duration: 0.3s;
 	}
 
-	#modal-container {
+	/*#modal-container {
 		padding: 200px;
-	}
+	}*/
 
 	#success-fail-modal {
 		z-index: 5;
